@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Secular+One');
+
+.back-image{
+    background-image: url("books1.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    z-index: 1;
+}
+.posts-page{
+    z-index: 999;
+    
+    height: 1000px;
+   
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.posts-container{
+    z-index: 9999;
+    position: absolute;
+    width: 30%;
+    border: 1px solid rgba(233, 234, 243, 0.5);
+    border-radius: 2px;
+    padding: 0 10px 10px 10px;
+    background-color: rgb(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.posts-second-container{
+    position: relative;
+    
+    margin: 0 0 20px 0;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    align-self: flex-start;
+    width: 100%;
+}
+#posts{
+    position: relative;
+    width: 84%;
+    height: 40px;
+    right: 31px;
+    margin: 10px 0 0 40px;
+    border-radius: 2px;
+    border: 1px solid rgba(233, 234, 243, 0.5);
+    overflow: hidden;   
+}
+#posts:hover{
+    /* background-color:rgba(255, 255, 255, 0.3); */
+  background: linear-gradient(to right,rgb(170, 35, 35),#52200c);
+  
+}
+#search{
+    color: rgb(238, 238, 230);
+    position: relative;
+    background-color:rgb(0,0,0,0.1);
+    border: 1px solid rgba(233, 234, 243, 0.5);
+    font-family: 'Anton', sans-serif;
+    top: 73px;
+    left: 4px;
+    width: 68%;
+    height: 29px;
+    border-radius: 2px;
+    margin: 7px;
+    align-self: flex-start
+}
+#search::placeholder{
+    position: relative;
+    left: 5px;
+    font-family: 'Anton', sans-serif;
+    color: rgba(173, 165, 165, 0.7)
+}
+
+#search:focus{
+    outline: none !important;
+    border:1px solid linear-gradient(to right,rgb(170, 35, 35),#52200c);
+    box-shadow: 0 0 10px rgb(141, 164, 189);
+}
+#link-to-edit{
+    position: relative;
+    border: 1px solid rgba(233, 234, 243, 0.5);
+    top: 18px;
+    
+    margin: 15px;
+    width: 20%;
+    height: 33px;
+    background-color: rgba(129, 113, 92, 0.1);
+    border-radius: 2px;
+    align-self: flex-end;
+}
+#link-to-edit:hover{
+    background: linear-gradient(to right,rgb(170, 35, 35),#52200c);
+}
+#link-to-edit:focus{
+    outline: none !important;
+    border:1px solid linear-gradient(to right,rgb(170, 35, 35),#52200c);
+    box-shadow: 0 0 10px rgb(141, 164, 189);
+}
+#content{
+    position: relative;
+    float: right;
+    margin: 10px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+#title{
+    position: relative;
+    right: 30px;
+    top: 8px;
+    color: rgb(238, 238, 230);
+    font-size: 15px;
+    font-family: 'Anton', sans-serif;
+    
+}
+#content{
+    color: rgb(238, 238, 230);
+    font-size: 15px;
+    overflow: hidden;
+    font-family: 'Anton', sans-serif;
+    max-width: 60%;
+    height: 50%; 
+    /* border: 1px solid black; */
+}
+#button-text{
+    position: relative;
+    font-family: 'Anton', sans-serif;
+    bottom: 9px;
+    right: 2px;
+    color: rgba(247, 243, 243, 0.8)
+}
+#first-title{
+    position: relative;
+    top: 40px;
+    /* color: linear-gradient(rgb(170, 35, 35),#be4616); */
+    background: linear-gradient(rgb(170, 35, 35) 33%, #792a0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+}
+#link{
+    text-decoration: none;
+}
+
+#link-editor{
+    text-decoration: none;
+}
+
+#cont{
+    overflow: hidden;
+    
+
+}

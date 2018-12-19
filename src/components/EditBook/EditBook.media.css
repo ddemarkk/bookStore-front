@@ -1,0 +1,29 @@
+@media  only screen and (max-width: 1200px){
+   
+    .editors-container{
+        width: 40%;
+    }
+} 
+
+@media  only screen and (max-width: 992px){
+   
+    .editors-container{
+        width: 50%;
+    }
+} 
+
+@media  only screen and (max-width: 768px){
+   
+    .editors-container{
+        width: 50%;
+    }
+} 
+
+@media  only screen and (max-width: 480px){
+   
+    .editors-container{
+        width: 80%;
+        height: 73%;
+        
+    }
+} 

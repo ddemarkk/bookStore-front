@@ -1,0 +1,96 @@
+@media only screen and (max-width: 1200px){
+    #link-to-edit{
+        margin-right: 11px;
+        position: relative;
+        left: 5px;
+        width: 20%;
+        align-self: flex-end;
+    }
+    .posts-container{   
+        z-index: 9999;
+        position: absolute;
+        width: 40%;
+    
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    
+        }
+}
+@media only screen and (max-width: 992px){
+    #link-to-edit{
+        
+        position: relative;
+        margin-right: 10px;
+        width: 70px;
+        align-self: flex-end;
+    }
+    .posts-second-container{
+        position: relative;
+        right: 4px;
+        margin: 0 0 20px 0;
+        top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        align-self: flex-start;
+        width: 100%;   
+    }
+    .posts-container{   
+    z-index: 9999;
+    position: absolute;
+    width: 40%;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+    }
+    #posts{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .posts-container{   
+        z-index: 9999;
+        position: absolute;
+        width: 55%;
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    
+        }
+        #link-to-edit{
+        
+            position: relative;
+            width: 80px;
+            margin-right: 10px;
+            align-self: flex-end;
+        }
+        #posts{
+            width: 85%;
+        }
+}
+
+@media only screen and (max-width: 480px){
+    .posts-container{   
+        z-index: 9999;
+        position: absolute;
+        width: 80%;
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    }
+    #posts{
+        width: 82%;
+    }
+}
