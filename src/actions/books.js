@@ -2,14 +2,14 @@
 
 export const addBook = ({
   id = "",
-  title = "",
+  name = "",
   content = "",
   categories = ""
 } = {}) => ({
   type: "ADD_BOOK",
   payload:{
     id,
-    title,
+    name,
     categories,
     content
   }
@@ -25,8 +25,8 @@ export const fetchBooks = (arr) => ({
   arr
 });
 
-export const filterBooks = (title) =>({
+export const filterBooks = (name) =>({
   type: "FILTER_BOOKS",
-  title
+  name
 
 })

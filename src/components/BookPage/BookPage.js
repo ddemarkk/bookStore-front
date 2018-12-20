@@ -21,13 +21,17 @@ class BooksPage extends Component {
   
   makeRequest = async () =>{
     const data = await axios.get('https://rocky-temple-95444.herokuapp.com/book')
-    console.log(data)
     this.props.fetchBooks(data.data)
   }
 
   onChange = (e) =>{
-    let filtered = this.props.book.filter(data => data.title.charAt() === e.target.value.charAt())
-    filtered.length !== 0 ? this.props.filterBooks(filtered) : this.componentDidMount()
+    let filtered = this.props.book.filter(data => data.name.includes(e.target.value));
+    
+    if(filtered.length !== 0 ) this.props.filterBooks(filtered);
+    
+    if(filtered.length === 0 ) this.componentDidMount();
+    
+    if(e.target.value.length === 0) this.componentDidMount();
   }
 
   render() { 

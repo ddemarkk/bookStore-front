@@ -10,7 +10,7 @@ export const booksReducer = (state = [], action) => {
       return action.arr
 
     case "FILTER_BOOKS":
-      return action.title
+      return action.name
 
     default:
       return state;

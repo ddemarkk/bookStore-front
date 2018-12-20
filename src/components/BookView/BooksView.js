@@ -12,7 +12,6 @@ class BooksView extends Component {
     axios.delete(`https://rocky-temple-95444.herokuapp.com/book/${this.props.book._id}`,{
       headers: { ['x-auth']: process.env.REACT_APP_USER_TOKEN}
     }).then(res =>{
-      console.log(res)
       const id = res.data.id
       this.props.removeBook({id})
       this.props.history.push('/')
@@ -21,13 +20,11 @@ class BooksView extends Component {
 
   componentDidMount(){
     axios.get('https://rocky-temple-95444.herokuapp.com/book').then(res => {
-      console.log(res)
       this.props.fetchBooks(res.data)
     })
   }
 
   render() {
-    console.log(this.props.book)
     return (
       <div className='books-container'>
         <div className='back-image'/>
