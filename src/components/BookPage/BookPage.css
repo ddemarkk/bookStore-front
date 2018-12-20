@@ -112,19 +112,23 @@
     box-shadow: 0 0 10px rgb(141, 164, 189);
 }
 #content{
+    /* border:1px solid white; */
     position: relative;
     float: right;
     margin: 10px;
+    bottom: 25px;
     word-wrap: break-word;
     overflow: hidden;
 }
 #title{
     position: relative;
     right: 30px;
+    max-width: 40%;
     top: 8px;
     color: rgb(238, 238, 230);
     font-size: 15px;
     font-family: 'Anton', sans-serif;
+    overflow: hidden;
     
 }
 #content{

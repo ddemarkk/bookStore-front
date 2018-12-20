@@ -56,7 +56,7 @@ const mapStateToProps = (state, props) => ({
   books: state.books.map(book => (
     <Link id='link'to={`/lister/${book._id}`} key={book._id}>
         <ul id='posts'>
-          <span id='title'>{book.name}</span>   <div id='content'>{book.description}</div>
+          <div id='title'>{book.name}</div>   <div id='content'>{book.description}</div>
         </ul>
     </Link>
   )),
