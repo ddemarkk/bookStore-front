@@ -52,6 +52,7 @@ class BooksPage extends Component {
     );
   }
 }
+
 const mapStateToProps = (state, props) => ({
   books: state.books.map(book => (
     <Link id='link'to={`/lister/${book._id}`} key={book._id}>
