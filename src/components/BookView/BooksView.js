@@ -7,39 +7,40 @@ import './BooksView.css'
 import './BooksView.media.css'
 import { Animated } from 'react-animated-css'
 class BooksView extends Component {
-  
+
   onClickDelete = () => {
-    axios.delete(`https://rocky-temple-95444.herokuapp.com/book/${this.props.book._id}`,{
-      headers: { ['x-auth']: process.env.REACT_APP_USER_TOKEN}
-    }).then(res =>{
+    axios.delete(`https://rocky-temple-95444.herokuapp.com/book/${this.props.book._id}`, {
+      headers: { ['x-auth']: process.env.REACT_APP_USER_TOKEN }
+    }).then(res => {
       const id = res.data.id
-      this.props.removeBook({id})
+      this.props.removeBook({ id })
       this.props.history.push('/')
     })
   };
 
-  componentDidMount(){
+  componentDidMount() {
     axios.get('https://rocky-temple-95444.herokuapp.com/book').then(res => {
       this.props.fetchBooks(res.data)
+      console.log(res)
     })
   }
 
   render() {
     return (
       <div className='books-container'>
-        <div className='back-image'/>
+        <div className='back-image' />
         {!this.props.book ?
           <div className='back-to-posts-button'>
             <Link to="/">Back to posts</Link>
-          </div> 
-            :  
-          <Animated className='exact-post-container' animationIn="fadeIn" animationOut="fadeOut"  isVisible={true}> 
+          </div>
+          :
+          <Animated className='exact-post-container' animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
             <div className='butt-container'>
               <button id='delete-button' onClick={this.onClickDelete}>Delete post</button>
               <button id='back-button'>
-                 <Link id='link-back' to='/'>Back to Post</Link>
+                <Link id='link-back' to='/'>Back to Post</Link>
               </button>
-              </div>
+            </div>
             <div className='content-container'>{this.props.book.description}</div>
           </Animated>
         }
@@ -52,4 +53,4 @@ const mapStateToProps = (state, props) => ({
   book: state.books.find(book => book._id.toString() === props.match.params.id)
 });
 
-export default connect(mapStateToProps,{ removeBook, fetchBooks })(BooksView);
+export default connect(mapStateToProps, { removeBook, fetchBooks })(BooksView);

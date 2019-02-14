@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 import { Animated } from "react-animated-css";
+import axios from 'axios';
 import "./LoginPage.css";
 
 class LoginPage extends Component {
@@ -15,12 +16,21 @@ class LoginPage extends Component {
   };
 
   onChangePassword = e => {
-    let password = e.targer.value;
+    let password = e.target.value;
     this.setState({ password });
+    console.log(this.state.password)
   };
 
-  submitForm = (e) => {
-    
+  submitForm = () => {
+    const { email, password } = this.state;
+    axios.post(`https://rocky-temple-95444.herokuapp.com/user/login`, {
+      email,
+      password
+    }).then(res => {
+      console.log(res);
+    })
+
+
   }
 
   render() {
@@ -34,7 +44,7 @@ class LoginPage extends Component {
           isVisible={true}
         >
           <h2 id="first-title">Login</h2>
-          <form className="login-form" onSubmit={this.onSubmit}>
+          <form className="login-form" >
             <input
               placeholder="Email..."
               id="email"
@@ -45,7 +55,7 @@ class LoginPage extends Component {
               id="password"
               onChange={this.onChangePassword}
             />
-            <button type='submit' id="login-button">
+            <button id="login-button" onClick={this.submitForm}>
               <p id="button-text">Login</p>
             </button>
             <div id="cont">{this.props.books}</div>
