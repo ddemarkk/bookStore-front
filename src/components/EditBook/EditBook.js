@@ -7,6 +7,8 @@ import './EditBook.css'
 import './EditBook.media.css'
 import { Animated } from 'react-animated-css'
 
+
+
 class EditBook extends Component {
   state = {
     name: "",
@@ -16,18 +18,18 @@ class EditBook extends Component {
   };
 
   onClickSend = (e) => {
-      const { name, description } = this.state;
-      if(this.state.description.length !== 0 && this.state.name.length !== 0){
-        axios.post(`https://rocky-temple-95444.herokuapp.com/book`, {
-          name, 
-          description
-        }, {
-          headers: {['x-auth']: process.env.REACT_APP_USER_TOKEN}
+    const { name, description } = this.state;
+    if (this.state.description.length !== 0 && this.state.name.length !== 0) {
+      axios.post(`https://rocky-temple-95444.herokuapp.com/book`, {
+        name,
+        description
+      }, {
+          headers: { ['x-auth']: localStorage.getItem("access_token") }
         }).then(res => {
           this.props.history.push('/');
         });
-      } else {
-      this.setState({alert: 'Enter something'})
+    } else {
+      this.setState({ alert: 'Enter something' })
     }
   };
 
@@ -52,22 +54,22 @@ class EditBook extends Component {
   render() {
     return (
       <div className='edit-container'>
-        <div className='back-image'/>
-        <Animated className='editors-container' animationIn="fadeIn" animationOut="fadeOut"  isVisible={true}>
+        <div className='back-image' />
+        <Animated className='editors-container' animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
           <h2 id='edit-title'>Create your book</h2>
-          <p style={{color: 'red'}}>{this.state.alert}</p>
+          <p style={{ color: 'red' }}>{this.state.alert}</p>
           <input id='edit-input' placeholder="Name..." onChange={this.onChangeName} />
-          <textarea placeholder='Start to write something...' id='content-area'name="text" onChange={this.onChangeDescription} />
-            <div className='butt-container'>
-              <button id='send-button' onClick={this.onClickSend}>
-                Save
+          <textarea placeholder='Start to write something...' id='content-area' name="text" onChange={this.onChangeDescription} />
+          <div className='butt-container'>
+            <button id='send-button' onClick={this.onClickSend}>
+              Save
               </button>
-              <button id='cancel-button'>
-                <Link id="link-to-start" to="/">
-                  Cancel
+            <button id='cancel-button'>
+              <Link id="link-to-start" to="/">
+                Cancel
                 </Link>
-              </button>
-            </div>
+            </button>
+          </div>
         </Animated>
       </div>
     );
@@ -77,4 +79,4 @@ class EditBook extends Component {
 const mapDispatchToProps = dispatch => ({
   addBook: payload => dispatch(addBook(payload))
 });
-export default connect(null,mapDispatchToProps)(EditBook);
+export default connect(null, mapDispatchToProps)(EditBook);

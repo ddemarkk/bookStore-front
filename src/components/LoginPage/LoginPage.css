@@ -125,3 +125,7 @@
     border:1px solid linear-gradient(to right,rgb(170, 35, 35),#52200c);
     box-shadow: 0 0 10px rgb(141, 164, 189);
 }
+#signup-link {
+    color: white;
+    text-decoration: none;
+}

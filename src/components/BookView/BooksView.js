@@ -10,7 +10,7 @@ class BooksView extends Component {
 
   onClickDelete = () => {
     axios.delete(`https://rocky-temple-95444.herokuapp.com/book/${this.props.book._id}`, {
-      headers: { ['x-auth']: process.env.REACT_APP_USER_TOKEN }
+      headers: { ['x-auth']: localStorage.getItem("access_token") }
     }).then(res => {
       const id = res.data.id
       this.props.removeBook({ id })

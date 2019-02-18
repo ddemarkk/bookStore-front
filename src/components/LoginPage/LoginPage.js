@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Animated } from "react-animated-css";
 import axios from 'axios';
 import "./LoginPage.css";
@@ -18,7 +18,6 @@ class LoginPage extends Component {
   onChangePassword = e => {
     let password = e.target.value;
     this.setState({ password });
-    console.log(this.state.password)
   };
 
   submitForm = () => {
@@ -27,7 +26,8 @@ class LoginPage extends Component {
       email,
       password
     }).then(res => {
-      console.log(res);
+      this.props.history.push('/')
+      localStorage.setItem("access_token", res.data)
     })
 
 
@@ -44,22 +44,22 @@ class LoginPage extends Component {
           isVisible={true}
         >
           <h2 id="first-title">Login</h2>
-          <form className="login-form" >
-            <input
-              placeholder="Email..."
-              id="email"
-              onChange={this.onChangeEmail}
-            />
-            <input
-              placeholder="Password..."
-              id="password"
-              onChange={this.onChangePassword}
-            />
-            <button id="login-button" onClick={this.submitForm}>
-              <p id="button-text">Login</p>
-            </button>
-            <div id="cont">{this.props.books}</div>
-          </form>
+
+          <input
+            placeholder="Email..."
+            id="email"
+            onChange={this.onChangeEmail}
+          />
+          <input
+            placeholder="Password..."
+            id="password"
+            onChange={this.onChangePassword}
+          />
+
+          <button id="login-button" onClick={this.submitForm}>
+            Login
+          </button>
+          <Link id='signup-link' to='/signup'>Don't have an account? Sign Up</Link>
         </Animated>
       </div>
     );
