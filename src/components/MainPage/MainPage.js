@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from 'axios'
 import { fetchBooks, filterBooks } from '../../actions/books'
-import './BookPage.css'
-import './BookPage.media.css'
+import './MainPage.css'
+import './MainPage.media.css'
 import { Animated } from 'react-animated-css'
 
 
-class BooksPage extends Component {
+class MainPage extends Component {
   state = {
     name: ""
   }
@@ -22,11 +22,9 @@ class BooksPage extends Component {
 
   makeRequest = async () => {
     await axios.get('https://rocky-temple-95444.herokuapp.com/book').then(res => {
-      console.log(res)
       this.props.fetchBooks(res.data)
     })
     await axios.get(`https://rocky-temple-95444.herokuapp.com/user/${localStorage.getItem('access_token')}`).then(res => {
-      console.log(res.data)
       this.setState({ name: res.data.name })
     })
   }
@@ -58,10 +56,18 @@ class BooksPage extends Component {
             </button>
             <span id="log-out">{}</span>
             <div id='cont'>{this.props.books}</div>
-            {localStorage.getItem('access_token') ? <span style={{ color: 'white' }}>{this.state.name} <span id="log-out" onClick={this.logOut}>Log out</span></span> : ''}
+            {localStorage.getItem('access_token') ? 
+              <div>
+                <Link to='/profile' style={{ color: 'white' }}>{this.state.name}</Link> 
+                <span id="log-out" style={{ color: 'white' }} onClick={this.logOut}>Log out</span>
+              </div>
+            :
+              <div>
+              <Link id='login-link' to='/signup'>Sign Up</Link><br></br>
+              <Link id='login-link' to='/login'>Log in</Link>
+              </div>
+            }
           </div>
-          <Link id='login-link' to='/signup'>Sign Up</Link>
-          <Link id='login-link' to='/login'>Log in</Link>
         </Animated>
       </div>
     );
@@ -79,4 +85,4 @@ const mapStateToProps = (state, props) => ({
   book: state.books
 });
 
-export default connect(mapStateToProps, { fetchBooks, filterBooks })(BooksPage);
+export default connect(mapStateToProps, { fetchBooks, filterBooks })(MainPage);

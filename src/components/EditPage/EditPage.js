@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addBook } from "../../actions/books";
 import axios from 'axios';
-import './EditBook.css'
-import './EditBook.media.css'
+import './EditPage.css'
+import './EditPage.media.css'
 import { Animated } from 'react-animated-css'
 
 
 
-class EditBook extends Component {
+class EditPage extends Component {
   state = {
     name: "",
     description: "",
@@ -79,4 +79,4 @@ class EditBook extends Component {
 const mapDispatchToProps = dispatch => ({
   addBook: payload => dispatch(addBook(payload))
 });
-export default connect(null, mapDispatchToProps)(EditBook);
+export default connect(null, mapDispatchToProps)(EditPage);

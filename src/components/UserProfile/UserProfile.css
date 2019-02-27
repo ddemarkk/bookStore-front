@@ -12,11 +12,9 @@
     filter: blur(5px);
     z-index: 1;
 }
-.login-page{
+.profile-page{
     z-index: 999;
-    
     height: 1000px;
-   
     width: 100%;
     margin: 0;
     padding: 0;
@@ -25,29 +23,41 @@
     justify-content: center;
     align-items: center;
 }
-.login-container{
+.profile-container{
     z-index: 9999;
     position: absolute;
-    width: 30%;
+    width: 60%;
+    height: 50%;
     border: 1px solid rgba(233, 234, 243, 0.5);
     border-radius: 2px;
-    padding: 0 10px 10px 10px;
+   
     background-color: rgb(0,0,0,0.6);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center; 
 }
-.login-form{
+.select-container{
+    /* border: 1px solid rgba(233, 234, 243, 0.5); */
     position: relative;
-    margin: 0 0 20px 0;
-    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: flex-start;
+    width: 32%;
+    height: 101%;
+} 
+.editor-container{
+    background-color: rgb(0,0,0,0.6);
+    border-left: 1px solid rgba(233, 234, 243, 0.5);
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
-    align-self: flex-start;
-    width: 100%;
+    align-self: flex-end;
+    width: 68%;
+    height: 100%;
 } 
 
 #email{
@@ -106,22 +116,20 @@
     box-shadow: 0 0 10px rgb(141, 164, 189);
 }
 
-#login-button{
+#profile-button{
     position: relative;
     border: 1px solid rgba(233, 234, 243, 0.5);
-    top: 18px;
     color: white;
-    margin: 15px;
-    width: 20%;
-    height: 33px;
+    width: 100%;
+    height: 10%;
     background-color: rgba(129, 113, 92, 0.1);
     border-radius: 2px;
     align-self: flex-end;
 }
-#login-button:hover{
+#profile-button:hover{
     background: linear-gradient(to right,rgb(170, 35, 35),#52200c);
 }
-#login-button:focus{
+#profile-button:focus{
     outline: none !important;
     border:1px solid linear-gradient(to right,rgb(170, 35, 35),#52200c);
     box-shadow: 0 0 10px rgb(141, 164, 189);
@@ -130,3 +138,35 @@
     color: white;
     text-decoration: none;
 }
+#password-button{
+    position: relative;
+    border: 1px solid rgba(233, 234, 243, 0.5);
+    color: white;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(129, 113, 92, 0.1);
+    border-radius: 2px;
+    align-self: flex-end;
+}
+#password-button:hover{
+    background: linear-gradient(to right,rgb(170, 35, 35),#52200c);
+}
+#password-button:focus{
+    outline: none !important;
+    border:1px solid linear-gradient(to right,rgb(170, 35, 35),#52200c);
+    box-shadow: 0 0 10px rgb(141, 164, 189);
+}
+
+
+
+/* #first-title{
+    position: relative;
+    right: 30px;
+    max-width: 40%;
+    top: 8px;
+    color: rgb(238, 238, 230);
+    font-size: 15px;
+    font-family: 'Anton', sans-serif;
+   
+    
+} */
