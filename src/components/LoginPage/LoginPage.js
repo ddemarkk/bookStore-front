@@ -26,11 +26,9 @@ class LoginPage extends Component {
       email,
       password
     }).then(res => {
-      this.props.history.push('/')
       localStorage.setItem("access_token", res.data)
+      this.props.history.push('/')
     })
-
-
   }
 
   render() {

@@ -13,9 +13,9 @@ class ChangePassword extends Component {
   componentDidMount = () => {
     axios.get(`https://rocky-temple-95444.herokuapp.com/user/${localStorage.getItem('access_token')}`, {
     }).then(res => {
-      sessionStorage.setItem("_id", res.data._id);
-      sessionStorage.setItem("name", res.data.name);
-      sessionStorage.setItem("email", res.data.email)  
+      // sessionStorage.setItem("_id", res.data._id);
+      // sessionStorage.setItem("name", res.data.name);
+      // sessionStorage.setItem("email", res.data.email)  
     })
   }
 

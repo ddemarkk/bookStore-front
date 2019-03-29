@@ -13,19 +13,29 @@ class MainPage extends Component {
     name: ""
   }
   componentDidMount = async () => {
-    await this.makeRequest()
+    await this.makeRequest();
   }
 
   compOut = () => {
-    this.props.history.push('/editor')
+    this.props.history.push('/editor');
   }
 
   makeRequest = async () => {
     await axios.get('https://rocky-temple-95444.herokuapp.com/book').then(res => {
-      this.props.fetchBooks(res.data)
+      this.props.fetchBooks(res.data);
     })
+    
     await axios.get(`https://rocky-temple-95444.herokuapp.com/user/${localStorage.getItem('access_token')}`).then(res => {
-      this.setState({ name: res.data.name })
+      this.setState({ name: res.data.name });
+
+      sessionStorage.setItem('_id', res.data._id);
+      sessionStorage.setItem('name', res.data.name);  
+      sessionStorage.setItem('email', res.data.email);
+      console.log(res)
+    })
+
+    axios.post(`https://rocky-temple-95444.herokuapp.com/cart/${sessionStorage.getItem('_id')}`).then(res => {
+      console.log(res);
     })
   }
 
@@ -41,6 +51,11 @@ class MainPage extends Component {
 
   logOut = () => {
     localStorage.removeItem("access_token");
+
+    sessionStorage.removeItem('_id');
+    sessionStorage.removeItem('name');  
+    sessionStorage.removeItem('email');
+    
     this.props.history.push('/login')
   }
   render() {

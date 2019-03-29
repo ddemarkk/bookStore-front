@@ -40,8 +40,8 @@ class SignUpPage extends Component {
       confirmPassword
     }).then(res => {
       console.log(res)
-      this.props.history.push('/')
       localStorage.setItem("access_token", res.data)
+      setTimeout(() => this.props.history.push('/'), 4000)
     })
 
 
