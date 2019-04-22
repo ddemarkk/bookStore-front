@@ -46,7 +46,7 @@ class ViewPage extends Component {
           <Animated className='exact-post-container' animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
             <div className='butt-container'>
               <button id='delete-button' onClick={this.onClickDelete}>Delete post</button>
-              <button id='addToCart-button' onClick={}>Add to cart</button>
+              <button id='addToCart-button' onClick={this.addToCart}>Add to cart</button>
               <button id='back-button'>
                 <Link id='link-back' to='/'>Back to Post</Link>
               </button>
