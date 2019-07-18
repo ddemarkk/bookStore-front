@@ -7,29 +7,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
-  <script src="https://chatwidget-dev-dot-activechat-200215.appspot.com/cdn.js"></script>
-  <script>
-    'use strict';
-    !function () { function c(d) { var e = document['cookie']['match'](new RegExp('(?:^|; )' + d['replace'](/([.$?*|{}()[]\/+^])/g, '\$1') + '=([^;]*)'));return e ? decodeURIComponent(e[0x1]) : undefined;  }function f() {   return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10); }var activechat = window['activechat'] = { 'load': function load(h) {   if (!h) return console['error']('activechat.load() error: "agentID" parameter is not specified!');this['url'] = 'https://architector-dev-dot-activechat-200215.appspot.com/anonymous/track';this['agentID'] = h;this['anonymousID'] = c('anonymousID') || f() + f();document['cookie'] = 'anonymousID=' + this['anonymousID'] + '; path=/ '; }, 'track': function track(i) { var j = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1]; if (!this['url'] || !this['anonymousID'] || !this['agentID']) return console['error']('activechat.track() error: you should call activechat.load(<agentID>) first!');if (!i) return console['error']('activechat.track() error: "event" parameter is not specified!');j['_last_page_visit_title'] = document['title'];j['_last_page_visit_url'] = document['location']['href'];fetch(encodeURI(this['url']), { 'cache': 'no-cache', 'headers': { 'Content-Type': 'application/json; charset=utf-8' }, 'method': 'post', 'body': JSON['stringify']({ 'attributes': j, 'agentID': this['agentID'], 'anonymousID': this['anonymousID'], 'event': i }) })['then'](function (k) {   return k['json']();  })['then'](function (l) { if (!l['ok']) throw new Error(l['result']); })['catch'](function (m) {   console['error']('activechat.track() error: ', m['message']); }); } }; }();
-    activechat.load('1235315b-2752-4109-b99d-21b1d0bcb4b0');
-    activechat.track('page_visit');
-  </script>
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <title>React App</title>
 </head>
 
 <body>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
-  <script>"use strict";
-    window.addEventListener("load", function () { var script = document.createElement('script'); script.src = 'https://chatwidget-dev-dot-activechat-200215.appspot.com/cdn.js'; script.id = 'ACCW_CDN'; document.getElementsByTagName('head')[0].appendChild(script);
-    document.querySelector('#ACCW_CDN').onload = function () {
-    ACCW.setup("1235315b-2752-4109-b99d-21b1d0bcb4b0");};
-  }, false);
-  </script>
   <div id="root"></div>
-  <p id='test' onclick="activechat.track('start', {vvv: 3})">Click Here</p>
 </body>
 
 </html>
