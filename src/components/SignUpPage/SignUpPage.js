@@ -80,6 +80,7 @@ class SignUpPage extends Component {
               onChange={this.ConfirmPassword}
             />
           </form>
+          <p id="ii">...</p>
           <button id="signup-button" onClick={this.submitForm}>
             Sign Up
           </button>

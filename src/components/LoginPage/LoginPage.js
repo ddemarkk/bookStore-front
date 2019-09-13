@@ -42,19 +42,27 @@ class LoginPage extends Component {
           isVisible={true}
         >
           <h2 id="first-title">Login</h2>
-
+        <div id="login-form">
           <input
             placeholder="Email..."
             id="email"
             onChange={this.onChangeEmail}
+            style={{'left': '55px', 'width': '300px'}}
           />
           <input
             placeholder="Password..."
             id="password"
             onChange={this.onChangePassword}
+            style={{'left': '55px', 'width': '300px'}}
           />
 
-          <button id="login-button" onClick={this.submitForm}>
+        </div>
+          <p id="iii">...</p>
+
+          <button id="login-button" 
+          onClick={this.submitForm}
+          style={{'right': '150px', 'width': '100px'}}
+          >
             Login
           </button>
           <Link id='signup-link' to='/signup'>Don't have an account? Sign Up</Link>

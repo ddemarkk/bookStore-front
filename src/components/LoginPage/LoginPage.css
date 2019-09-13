@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Anton|Secular+One');
-
+@import url('https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap');
+#first-title{ 
+    font-family: 'Hind Siliguri', sans-serif;
+}
 .back-image{
     background-image: url("../images/books1.jpg");
     background-size: cover;
@@ -40,15 +42,12 @@
 }
 .login-form{
     position: relative;
-    margin: 0 0 20px 0;
-    top: 20px;
+    left: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
-    align-self: flex-start;
     width: 100%;
-} 
+}
 
 #email{
     color: rgb(238, 238, 230);
@@ -110,6 +109,7 @@
     position: relative;
     border: 1px solid rgba(233, 234, 243, 0.5);
     top: 18px;
+    right: 100px;
     color: white;
     margin: 15px;
     width: 20%;
@@ -127,6 +127,12 @@
     box-shadow: 0 0 10px rgb(141, 164, 189);
 }
 #signup-link {
+    position: relative;
     color: white;
     text-decoration: none;
+    margin: 15px 0px 0px 0px;
+}
+#iii {
+    position: relative;
+    margin: 30px 0px 0px 0px;
 }
