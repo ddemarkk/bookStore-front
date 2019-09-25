@@ -12,7 +12,9 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+  <button onclick={window.activechat.track('Okay', {value: 'Hey there!'})}>Check here</button>
+  </div>
   <script>
     (function () {
       var script = document.createElement('script');
@@ -21,11 +23,6 @@
     })();
   </script>
   <button onclick={window.activechat.track('Okay', {value: 'Hey there!'})}>Check here</button>
-<<<<<<< HEAD
-  <div id="root"></div>
-
-=======
->>>>>>> 019ee73cf9d89de4ff60ed988338aa4f96bd28f3
 </body>
 
 </html>
