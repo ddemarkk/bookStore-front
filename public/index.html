@@ -13,7 +13,46 @@
 
 <body>
   <div id="root"></div>
-  <script>(function () { var script = document.createElement('script'); script.src = 'https://app.activechat.ai/script/24835636-0164-4fd5-8c9e-e46b80b84a46'; script.id = 'ACCW_EMBED'; document.getElementsByTagName('head')[0].appendChild(script); })();</script>
+  <script>
+    "use strict";
+    window.addEventListener(
+      "load",
+      function () {
+        function guid() { return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4(); }
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(4)
+        }
+        var script = document.createElement("script");
+        script.src =
+          "https://app.activechat.ai/gateway/script/1235315b-2752-4109-b99d-21b1d0bcb4b0";
+        script.id = "ACCW_EMBED";
+        document.getElementsByTagName("head")[0].appendChild(script);
+        window.acChatWidgetLoaded = function () {
+          var now = new Date();
+          var time = now.getTime();
+          time += 10800 * 1000;
+          now.setTime(time);
+          const userActive = document.cookie.split(';').map(element => element.split('=')[0]).filter(element => element.trim() === 'userActive')
+          if (!userActive.length) {
+            document.cookie =
+              'userActive=' + true +
+              '; expires=' + now.toUTCString() +
+              '; path=/'
+            document.cookie = document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+            document.cookie = `userID=${guid()}`
+          } else {
+            document.cookie =
+              'userActive=' + true +
+              '; expires=' + now.toUTCString() +
+              '; path=/'
+          }
+        }
+      },
+      false
+    );
+  </script>
 </body>
 
 </html>
